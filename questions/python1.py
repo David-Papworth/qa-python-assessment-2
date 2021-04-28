@@ -36,7 +36,13 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+	if len(input1) > len(input2):
+		endword = input1
+	elif len(input2) > len(input1):
+		endword = input2
+	else:
+		endword = input1 + " " + input2
+	return endword
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -60,7 +66,15 @@ def one(input1, input2):
 	# No hints for this question
 
 def two(arg1):
-	return "null"
+	if arg1 % 5 == 0 and arg1 % 3 ==0:
+		out = "fizzbuzz"
+	elif arg1 % 5 == 0:
+		out = "buzz"
+	elif arg1 % 3 == 0:
+		out = "fizz"
+	else:
+		out = "null"
+	return out
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -78,7 +92,7 @@ def two(arg1):
 
 	# How do we ignore case in a String? help(str) may offer some insight.
 
-def three(input):
+def three(input): 
     return 0
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
@@ -122,7 +136,13 @@ def four(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-	return 1
+	list_numbers = []
+	res = 1
+	for i in range(input):
+		list_numbers.append(i + 1)
+	for x in list_numbers:
+		res *= x
+	return res
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -144,8 +164,15 @@ def five(input):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
-	return False
-
+	num = int - 1
+	if num < len(string):
+		if string.lower()[num] == char:
+			pos = True
+		else:
+			pos = False
+	else:
+		pos = False
+	return pos
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 7>
@@ -167,7 +194,22 @@ def six(string, int, char):
 	# Take a look at the documentation for Strings, List and range.
 
 def seven(inputString, char):
-	return -1
+	isin = False
+	for chr in inputString:
+		if chr == char:
+			isin = True
+	if isin == True:
+		posit = 1
+		for chr in inputString:
+			if chr == char:
+				return posit
+			else: 
+				posit +=1
+	else:
+		posit = -1
+		return posit 
+
+print(seven("Fridge for sale","z"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
