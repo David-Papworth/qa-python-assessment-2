@@ -195,14 +195,19 @@ def six(string, int, char):
 
 def seven(inputString, char):
 	isin = False
+	
 	for chr in inputString:
 		if chr == char:
 			isin = True
 	if isin == True:
 		posit = 1
+		white_space = 0
 		for chr in inputString:
 			if chr == char:
-				return posit
+				return posit - white_space
+			elif chr == ' ':
+				white_space += 1
+				posit += 1
 			else: 
 				posit +=1
 	else:
